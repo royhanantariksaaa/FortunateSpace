@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "studios",
+  "info": {
+    "singularName": "studio",
+    "pluralName": "studios",
+    "displayName": "Studio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "ownerID": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "studioID"
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "studioScheduleID": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::studio-schedule.studio-schedule",
+      "mappedBy": "studioID"
+    },
+    "studioImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}

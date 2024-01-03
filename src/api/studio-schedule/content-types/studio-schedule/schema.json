@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "studio_schedules",
+  "info": {
+    "singularName": "studio-schedule",
+    "pluralName": "studio-schedules",
+    "displayName": "StudioSchedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "studioID": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::studio.studio",
+      "inversedBy": "studioScheduleID"
+    },
+    "studiodate": {
+      "type": "datetime"
+    },
+    "price": {
+      "type": "integer"
+    }
+  }
+}
